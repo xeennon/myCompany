@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Create employees</title>
+</head>
+<body>
+<form action="#" th:action="@{/employees-create}" th:object="${employees}" method="post">
+  <label for="company_id">Company_id</label>
+  <input type="text" th:field="*{company_id}" id="company_id" placeholder="company_id">
+  <br/>
+  <label for="name">Name</label>
+  <input type="text" th:field="*{name}" id="name" placeholder="Name">
+  <br/>
+  <label for="position">Position</label>
+  <input type="text" th:field="*{position}" id="position" placeholder="position">
+  <br/>
+  <label for="work_experience">Work_experience</label>
+  <input type="text" th:field="*{work_experience}" id="work_experience" placeholder="work_experience">
+  <br/>
+  <input type="submit" value="Create">
+</form>
+</body>
+</html>

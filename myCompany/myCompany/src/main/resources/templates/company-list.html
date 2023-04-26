@@ -1,0 +1,38 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<head>
+  <meta charset="UTF-8">
+  <title>Company</title>
+</head>
+<body>
+<div th:switch="${company}">
+  <h2 th:case="null">No company found!</h2>
+  <div th:case="*">
+    <h2>Company</h2>
+    <table>
+      <thead>
+      <tr>
+        <th>company_id</th>
+        <th>name</th>
+        <th>location</th>
+        <th>specialization</th>
+        <th>income_per_year</th>
+      </tr>
+      </thead>
+      <tbody>
+      <tr th:each="company : ${company}">
+        <td th:text="${company.company_id}"></td>
+        <td th:text="${company.name}"></td>
+        <td th:text="${company.location}"></td>
+        <td th:text="${company.specialization}"></td>
+        <td th:text="${company.income_per_year}"></td>
+        <td><a th:href="@{company-update/{id}(id=${company.company_id})}">Edit</a></td>
+        <td><a th:href="@{company-delete/{id}(id=${company.company_id})}">Delete</a></td>
+      </tr>
+      </tbody>
+    </table>
+  </div>
+  <p><a href="/company-create">Create company</a></p>
+</div>
+</body>
+</html>

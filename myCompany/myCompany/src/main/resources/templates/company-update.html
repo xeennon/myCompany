@@ -1,0 +1,27 @@
+
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.w3.org/1999/xhtml">
+<meta charset="UTF-8">
+<title>Create company</title>
+</head>
+<body>
+<form action="#" th:action="@{/company-update}" th:object="${company}" method="post">
+  <label for="company_id">ID</label>
+  <input readonly type="number" th:field="*{company_id}" id="company_id" placeholder="ID">
+  <br/>
+  <label for="name">name</label>
+  <input type="text" th:field="*{name}" id="name" placeholder="Name">
+  <br/>
+  <label for="location">Location</label>
+  <input type="text" th:field="*{location}" id="location" placeholder="Location">
+  <br/>
+  <label for="specialization">specialization</label>
+  <input type="text" th:field="*{specialization}" id="specialization" placeholder="Specialization">
+  <br/>
+  <label for="income_per_year">income_per_year</label>
+  <input type="text" th:field="*{income_per_year}" id="income_per_year" placeholder="Income_per_year">
+  <br/>
+  <input type="submit" value="Update Company">
+</form>
+</body>
+</html>
